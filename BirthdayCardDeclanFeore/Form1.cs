@@ -68,6 +68,8 @@ namespace BirthdayCardDeclanFeore
             Font greenFont = new Font("Comic Sans", 32);
             SolidBrush goldBrush = new SolidBrush(Color.Gold);
             Font goldFont = new Font("Arial", 32);
+            Pen balloonPen = new Pen(Color.DarkRed, 5);
+            SolidBrush balloonBrush = new SolidBrush(Color.DarkRed);
             SoundPlayer pageSound = new SoundPlayer(Properties.Resources.PageFlip);
             SoundPlayer birthdaySound = new SoundPlayer(Properties.Resources.HappyBirthday);
 
@@ -120,6 +122,12 @@ namespace BirthdayCardDeclanFeore
             Thread.Sleep(300);
 
             birthdaySound.Play();
+
+            //the balloons
+            g.FillEllipse(balloonBrush, 15, 260, 50, 60);
+            g.DrawLine(balloonPen, 40, 320, 40, 400);
+            g.FillEllipse(balloonBrush, 345, 20, 50, 60);
+            g.DrawLine(balloonPen, 370, 80, 370, 160);
         }
     }
 }
